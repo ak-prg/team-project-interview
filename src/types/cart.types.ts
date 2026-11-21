@@ -15,3 +15,10 @@ export type CartItemRowProps = {
   onDecrement: (item: CartItem) => void;
   onRemove: (item: CartItem) => void;
 };
+
+export type OrderTotal = {
+  subtotal: number;
+  discount: number;
+  delivery: number;
+  total: number;
+};

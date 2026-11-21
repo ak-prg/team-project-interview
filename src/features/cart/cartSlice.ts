@@ -1,6 +1,7 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { CartState } from '../../types/cart.types';
 import type { Product } from '../../types/catalog.types';
+import { validateQuantity } from './cart-utils';
 
 const initialState: CartState = { items: [] };
 
@@ -13,10 +14,12 @@ export const cartSlice = createSlice({
       const existingItem = state.items.find(
         (item) => item.product.id === product.id
       );
+      const newQuantity = existingItem ? existingItem.quantity + 1 : 1;
+      if (!validateQuantity(newQuantity, product.stock)) return;
       if (existingItem) {
-        existingItem.quantity++;
+        existingItem.quantity = newQuantity;
       } else {
-        state.items.push({ product, quantity: 1 });
+        state.items.push({ product, quantity: newQuantity });
       }
     },
     removeItem: (state, action: PayloadAction<string>) => {
@@ -30,7 +33,10 @@ export const cartSlice = createSlice({
     ) => {
       const { id, quantity } = action.payload;
       const itemToUpdate = state.items.find((item) => item.product.id === id);
-      if (itemToUpdate) {
+      if (
+        itemToUpdate &&
+        validateQuantity(quantity, itemToUpdate.product.stock)
+      ) {
         itemToUpdate.quantity = quantity;
       }
     },

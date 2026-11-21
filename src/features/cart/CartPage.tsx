@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, updateQuantity } from './cartSlice';
 import {
   calculateTotalAmount,
+  calculateOrderTotal,
   getIncreasedQuantity,
   getDecreasedQuantity,
   formatPrice,
@@ -14,6 +16,8 @@ import './CartPage.css';
 const CartPage = () => {
   const cart = useSelector((state: RootState) => state.cart.items);
   const dispatch = useDispatch();
+  const [promoCode, setPromoCode] = useState('');
+  const order = calculateOrderTotal(cart, promoCode);
 
   const handleIncrement = (item: CartItem) => {
     dispatch(
@@ -62,7 +66,17 @@ const CartPage = () => {
           />
         ))}
       </div>
-      <div className="cart__total"></div>
+      <input
+        className="cart__promo"
+        placeholder="Promo code"
+        value={promoCode}
+        onChange={(e) => setPromoCode(e.target.value)}
+      />
+      <div className="cart__total">
+        <p>Discount: −${formatPrice(order.discount)}</p>
+        <p>Delivery: ${formatPrice(order.delivery)}</p>
+        <p>Total: ${formatPrice(order.total)}</p>
+      </div>
       <div className="cart__actions">
         <button
           className="cart__button cart__button--continue"
