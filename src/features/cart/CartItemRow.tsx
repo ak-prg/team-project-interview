@@ -11,7 +11,7 @@ function CartItemRow({
     <div className="cart-item">
       <img
         className="cart-item__image"
-        src={item.product.image}
+        src={item.product.images[0] ?? ''}
         alt={item.product.name}
       />
       <div className="cart-item__details">
