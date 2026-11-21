@@ -8,3 +8,10 @@ export type CartItem = {
 export type CartState = {
   items: CartItem[];
 };
+
+export type CartItemRowProps = {
+  item: CartItem;
+  onIncrement: (item: CartItem) => void;
+  onDecrement: (item: CartItem) => void;
+  onRemove: (item: CartItem) => void;
+};
