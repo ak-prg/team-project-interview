@@ -1,0 +1,321 @@
+[
+  {
+    "id": "1",
+    "key": "L0431",
+    "partNumber": "55367S1150",
+    "origNumber": "55367S1150",
+    "name": "Амортизатор подвески HYUNDAI",
+    "producer": "HYUNDAI",
+    "images": [
+      "parts/L0431_1.webp",
+      "parts/L0431_2.webp",
+      "parts/L0431_3.webp"
+    ],
+    "price": 102678,
+    "stock": 1
+  },
+  {
+    "id": "2",
+    "key": "L0513",
+    "partNumber": "24.0120-0246.1",
+    "origNumber": "31471816",
+    "name": "Диск тормозной задний 320x20 Volvo",
+    "producer": "ATE",
+    "images": [
+      "parts/L0513_1.webp",
+      "parts/L0513_2.webp",
+      "parts/L0513_3.webp",
+      "parts/L0513_4.webp"
+    ],
+    "price": 96168,
+    "stock": 2
+  },
+  {
+    "id": "3",
+    "key": "L0509",
+    "partNumber": "09.C937.11",
+    "origNumber": "31400569",
+    "name": "Диск тормозной передний 366x30 Volvo",
+    "producer": "BREMBO",
+    "images": [
+      "parts/L0509_1.webp",
+      "parts/L0509_2.webp",
+      "parts/L0509_3.webp",
+      "parts/L0509_4.webp",
+      "parts/L0509_5.webp"
+    ],
+    "price": 59556,
+    "stock": 2
+  },
+  {
+    "id": "4",
+    "key": "L0510",
+    "partNumber": "P86 027",
+    "origNumber": "32373126",
+    "name": "Колодки дисковые передние 180x75x18 Volvo",
+    "producer": "A.B.S.",
+    "images": ["parts/L0510_1.webp", "parts/L0510_2.webp"],
+    "price": 16428,
+    "stock": 1
+  },
+  {
+    "id": "5",
+    "key": "L0244",
+    "partNumber": "P86029",
+    "origNumber": "221411601",
+    "name": "Колодки тормозные дисковые Volvo S",
+    "producer": "BREMBO",
+    "images": [
+      "parts/L0244_11.webp",
+      "parts/L0244_12.webp",
+      "parts/L0244_13.webp"
+    ],
+    "price": 15876,
+    "stock": 1
+  },
+  {
+    "id": "6",
+    "key": "L0244",
+    "partNumber": "22141.160.1",
+    "origNumber": "221411601",
+    "name": "Колодки тормозные дисковые Volvo S",
+    "producer": "ZIMMERMANN",
+    "images": [
+      "parts/L0244_21.webp",
+      "parts/L0244_22.webp",
+      "parts/L0244_23.webp"
+    ],
+    "price": 13008,
+    "stock": 1
+  },
+  {
+    "id": "7",
+    "key": "L0512",
+    "partNumber": "71-12274-00",
+    "origNumber": "31370166",
+    "name": "Прокладка впускного коллектора Volvo",
+    "producer": "VICTOR REINZ",
+    "images": [
+      "parts/L0512_1.webp",
+      "parts/L0512_2.webp",
+      "parts/L0512_3.webp"
+    ],
+    "price": 3390,
+    "stock": 1
+  },
+  {
+    "id": "8",
+    "key": "L0516",
+    "partNumber": "31370167",
+    "origNumber": "31370167",
+    "name": "Прокладка дросселя volvo S60",
+    "producer": "VOLVO",
+    "images": ["parts/L0516_1.webp", "parts/L0516_2.webp"],
+    "price": 3600,
+    "stock": 1
+  },
+  {
+    "id": "9",
+    "key": "L0511",
+    "partNumber": "31461861",
+    "origNumber": "31461861",
+    "name": "Прокладка клапанной крышки Volvo",
+    "producer": "VOLVO",
+    "images": ["parts/L0511_1.webp", "parts/L0511_2.webp"],
+    "price": 21192,
+    "stock": 1
+  },
+  {
+    "id": "10",
+    "key": "L0246",
+    "partNumber": "242926",
+    "origNumber": "242926",
+    "name": "Ремкомплект дискового тормоза с поршнем Volvo S",
+    "producer": "FRENKIT",
+    "images": [
+      "parts/L0246_1.webp",
+      "parts/L0246_2.webp",
+      "parts/L0246_3.webp"
+    ],
+    "price": 3984,
+    "stock": 1
+  },
+  {
+    "id": "11",
+    "key": "L0180",
+    "partNumber": "19033885",
+    "origNumber": "31437319",
+    "name": "Сальник КПП 40х63х8 Volvo S40/V40/S70/V70/S80",
+    "producer": "CORTECO",
+    "images": [
+      "parts/L0180_1.webp",
+      "parts/L0180_2.webp",
+      "parts/L0180_3.webp"
+    ],
+    "price": 3354,
+    "stock": 1
+  },
+  {
+    "id": "12",
+    "key": "L0400",
+    "partNumber": "CAC-24110",
+    "origNumber": "31407748",
+    "name": "Фильтр салона угольный Volvo XC90",
+    "producer": "SAKURA",
+    "images": [
+      "parts/L0400_1.webp",
+      "parts/L0400_2.webp",
+      "parts/L0400_3.webp",
+      "parts/L0400_4.webp"
+    ],
+    "price": 7344,
+    "stock": 1
+  },
+  {
+    "id": "13",
+    "key": "L0606",
+    "partNumber": "8450000255",
+    "origNumber": "8450000255",
+    "name": "Эмблема решетки радиатора LADA",
+    "producer": "LADA",
+    "images": [],
+    "price": 1896,
+    "stock": 1
+  },
+  {
+    "id": "14",
+    "key": "L0589",
+    "partNumber": "CAT604",
+    "origNumber": "1J2721403A",
+    "name": "Катализатор коллекторный керамический VW",
+    "producer": "FORTLUFT",
+    "images": [],
+    "price": 45558,
+    "stock": 1
+  },
+  {
+    "id": "15",
+    "key": "L0636",
+    "partNumber": "QZ7701208408",
+    "origNumber": "7701208408",
+    "name": "Замок зажигания Renault Logan II",
+    "producer": "QUARTZ",
+    "images": [],
+    "price": 6486,
+    "stock": 1
+  },
+  {
+    "id": "16",
+    "key": "L0560",
+    "partNumber": "DA21240B",
+    "origNumber": "511655594R",
+    "name": "Заглушка бампера крюка буксировки Renault",
+    "producer": "GOOD GO",
+    "images": [
+      "parts/L0560_1.webp",
+      "parts/L0560_2.webp",
+      "parts/L0560_3.webp"
+    ],
+    "price": 6468,
+    "stock": 1
+  },
+  {
+    "id": "17",
+    "key": "L0118",
+    "partNumber": "92-02409-010",
+    "origNumber": "485211105R",
+    "name": "Тяга рулевая Renault Dokker",
+    "producer": "RTS",
+    "images": ["parts/L0118_1.webp"],
+    "price": 4272,
+    "stock": 2
+  },
+  {
+    "id": "18",
+    "key": "L0328",
+    "partNumber": "EZC-AU-051",
+    "origNumber": "3G0827503B",
+    "name": "Замок крышки багажника: AUDI A1 2010-,A3 2012",
+    "producer": "NTY",
+    "images": ["parts/L0328_1.webp"],
+    "price": 7506,
+    "stock": 1
+  },
+  {
+    "id": "19",
+    "key": "L0461",
+    "partNumber": "7412-10569",
+    "origNumber": "110605536R",
+    "name": "Термостат RENAULT",
+    "producer": "GATES",
+    "images": ["parts/L0461_1.webp", "parts/L0461_2.webp"],
+    "price": 10986,
+    "stock": 1
+  },
+  {
+    "id": "20",
+    "key": "L0308",
+    "partNumber": "6PK1722S",
+    "origNumber": "6PK1722S",
+    "name": "Ремень поликлиновой",
+    "producer": "DAYCO",
+    "images": ["parts/L0308_1.webp"],
+    "price": 4194,
+    "stock": 1
+  },
+  {
+    "id": "21",
+    "key": "L0583",
+    "partNumber": "FT00353",
+    "origNumber": "7700435694",
+    "name": "Ручка крышки багажника RENAULT",
+    "producer": "FAST",
+    "images": ["parts/L0583_1.webp"],
+    "price": 10806,
+    "stock": 1
+  },
+  {
+    "id": "22",
+    "key": "L0602",
+    "partNumber": "310055_EA1",
+    "origNumber": "04L253725B",
+    "name": "Соединение фланцевое в сборе D55 Audi Seat Skoda VW",
+    "producer": "EAG",
+    "images": [],
+    "price": 3282,
+    "stock": 1
+  },
+  {
+    "id": "23",
+    "key": "6648",
+    "partNumber": "934-970",
+    "origNumber": "3C0253725",
+    "name": "Хомут глушителя FA1 Renault Megane D70",
+    "producer": "FA1",
+    "images": ["parts/6648_1.webp"],
+    "price": 822,
+    "stock": 1
+  },
+  {
+    "id": "24",
+    "key": "31015",
+    "partNumber": "А63R42-6106200",
+    "origNumber": "А63R42610620001",
+    "name": "Моторедуктор привода двери новой конструкции MoveWell Газель-NTXT",
+    "producer": "RS DETAL",
+    "images": ["parts/31015_1.webp"],
+    "price": 17982,
+    "stock": 1
+  },
+  {
+    "id": "25",
+    "key": "31228",
+    "partNumber": "А62R23-3778020-10",
+    "origNumber": "А62R23-3778020-10",
+    "name": "Шестерня ведущего вала Газель Некст",
+    "producer": "Gaz",
+    "images": ["parts/31228_1.webp"],
+    "price": 4339,
+    "stock": 2
+  }
+]
