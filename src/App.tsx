@@ -1,14 +1,4 @@
-import Footer from './features/core/Footer';
-import Header from './features/core/Header';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router';
 
-function App() {
-  return (
-    <>
-      <Header />
-      <main>{/* Outlet for router will be here */}</main>
-      <Footer />
-    </>
-  );
-}
-
-export default App;
+export const App = () => <RouterProvider router={router} />;
