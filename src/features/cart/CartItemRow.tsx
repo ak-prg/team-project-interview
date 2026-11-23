@@ -1,7 +1,7 @@
 import type { CartItemRowProps } from '../../types/cart.types';
 import { calculateTotalPrice, formatPrice } from './cart-utils';
 
-function CartItemRow({
+export function CartItemRow({
   item,
   onIncrement,
   onDecrement,
@@ -44,5 +44,3 @@ function CartItemRow({
     </div>
   );
 }
-
-export default CartItemRow;

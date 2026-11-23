@@ -8,12 +8,12 @@ import {
   getDecreasedQuantity,
   formatPrice,
 } from './cart-utils';
-import CartItemRow from './CartItemRow';
+import { CartItemRow } from './CartItemRow';
 import type { CartItem } from '../../types/cart.types';
 import type { RootState } from '../../store';
-import './CartPage.css';
+import './Cart.css';
 
-const CartPage = () => {
+export const Cart = () => {
   const cart = useSelector((state: RootState) => state.cart.items);
   const dispatch = useDispatch();
   const [promoCode, setPromoCode] = useState('');
@@ -95,5 +95,3 @@ const CartPage = () => {
     </div>
   );
 };
-
-export default CartPage;
