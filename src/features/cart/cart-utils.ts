@@ -28,7 +28,8 @@ export const calculateTotalQuantity = (items: CartItem[]): number => {
 export const isInCart = (items: CartItem[], id: string): boolean =>
   items.some((item) => item.product.id === id);
 
-export const formatPrice = (cents: number): string => (cents / 100).toFixed(2);
+export const formatPrice = (cents: number): string =>
+  `${(cents / 100).toFixed(2)} BYN`;
 
 export const validateQuantity = (quantity: number, stock: number): boolean => {
   return Number.isInteger(quantity) && quantity > 0 && quantity <= stock;

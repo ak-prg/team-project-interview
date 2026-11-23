@@ -52,8 +52,8 @@ export const Cart = () => {
 
   return (
     <div className="cart">
-      <h2 className="cart__title">
-        Total Cart Amount: ${formatPrice(calculateTotalAmount(cart))}
+      <h2 className="cart__title heading-text">
+        Сумма корзины: {formatPrice(calculateTotalAmount(cart))}
       </h2>
       <div className="cart__list">
         {cart.map((item: CartItem) => (
@@ -67,29 +67,29 @@ export const Cart = () => {
         ))}
       </div>
       <input
-        className="cart__promo"
-        placeholder="Promo code"
+        className="cart__promo body-text"
+        placeholder="Промокод"
         value={promoCode}
         onChange={(e) => setPromoCode(e.target.value)}
       />
       <div className="cart__total">
-        <p>Discount: −${formatPrice(order.discount)}</p>
-        <p>Delivery: ${formatPrice(order.delivery)}</p>
-        <p>Total: ${formatPrice(order.total)}</p>
+        <p className="body-text">Скидка: −{formatPrice(order.discount)}</p>
+        <p className="body-text">Доставка: {formatPrice(order.delivery)}</p>
+        <p className="total-text">Итого: {formatPrice(order.total)}</p>
       </div>
       <div className="cart__actions">
         <button
-          className="cart__button cart__button--continue"
+          className="cart__button cart__button--continue action-text"
           onClick={() => handleContinueShopping()}
         >
-          Continue Shopping
+          Продолжить покупки
         </button>
         <br />
         <button
-          className="cart__button cart__button--checkout"
+          className="cart__button cart__button--checkout action-text"
           onClick={handleCheckoutShopping}
         >
-          Checkout
+          Оформить заказ
         </button>
       </div>
     </div>
