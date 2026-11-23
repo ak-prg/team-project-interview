@@ -15,7 +15,7 @@ export const ProductList = () => {
   };
 
   // Buttons for testing the cart - delete after catalog implementation
-  const firstProduct = products[0];
+  const firstProduct = products[1];
   const navigate = useNavigate();
   const handleGoToCart = () => {
     navigate(ROUTES.CART);

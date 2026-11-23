@@ -12,10 +12,13 @@ import { CartItemRow } from './CartItemRow';
 import type { CartItem } from '../../types/cart.types';
 import type { RootState } from '../../store';
 import './Cart.css';
+import { useNavigate } from 'react-router-dom';
+import { ROUTES } from '../../routes';
 
 export const Cart = () => {
   const cart = useSelector((state: RootState) => state.cart.items);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [promoCode, setPromoCode] = useState('');
   const order = calculateOrderTotal(cart, promoCode);
 
@@ -41,13 +44,8 @@ export const Cart = () => {
     dispatch(removeItem(item.product.id));
   };
 
-  const handleCheckoutShopping = () => {
-    alert('Functionality to be added for future reference');
-  };
-
-  // TODO - redirect to catalog
   const handleContinueShopping = () => {
-    return;
+    navigate(ROUTES.HOME);
   };
 
   return (
@@ -87,7 +85,8 @@ export const Cart = () => {
         <br />
         <button
           className="cart__button cart__button--checkout action-text"
-          onClick={handleCheckoutShopping}
+          disabled
+          title="Скоро будет доступно"
         >
           Оформить заказ
         </button>

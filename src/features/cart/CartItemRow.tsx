@@ -1,5 +1,9 @@
 import type { CartItemRowProps } from '../../types/cart.types';
-import { calculateTotalPrice, formatPrice } from './cart-utils';
+import {
+  calculateTotalPrice,
+  canIncreaseQuantity,
+  formatPrice,
+} from './cart-utils';
 import './CartItemRow.css';
 
 export function CartItemRow({
@@ -33,6 +37,7 @@ export function CartItemRow({
           <button
             className="cart-item__button cart-item__button--increment"
             onClick={() => onIncrement(item)}
+            disabled={!canIncreaseQuantity(item)}
           >
             +
           </button>

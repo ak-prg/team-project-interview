@@ -57,6 +57,12 @@
   background-color: var(--bg-accent);
 }
 
+.cart-item__button:disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
 .cart-item__quantity-value {
   min-width: 20px;
   text-align: center;

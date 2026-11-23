@@ -15,6 +15,9 @@ export const calculateTotalPrice = (item: CartItem): number => {
   return item.product.price * item.quantity;
 };
 
+export const canIncreaseQuantity = (item: CartItem): boolean =>
+  validateQuantity(getIncreasedQuantity(item), item.product.stock);
+
 export const getIncreasedQuantity = (item: CartItem): number =>
   item.quantity + 1;
 
@@ -46,9 +49,11 @@ export const calculateOrderTotal = (
   promoCode: string
 ): OrderTotal => {
   const subtotal = calculateCartSubtotal(items);
-  const delivery = subtotal >= FREE_DELIVERY_FROM ? 0 : DELIVERY_COST;
+  const delivery =
+    items.length === 0 || subtotal >= FREE_DELIVERY_FROM ? 0 : DELIVERY_COST;
   const discount =
-    subtotal >= PROMO_MIN_SUBTOTAL && promoCode === PROMO_CODE
+    subtotal >= PROMO_MIN_SUBTOTAL &&
+    promoCode.trim().toUpperCase() === PROMO_CODE
       ? Math.round(subtotal * (DISCOUNT_PERCENT / 100))
       : 0;
   return {
