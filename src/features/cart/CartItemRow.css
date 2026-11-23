@@ -47,19 +47,15 @@
   background-color: var(--bg-page);
   border: 1px solid var(--border-accent);
   border-radius: var(--radius);
-  transition:
-    background-color var(--transition),
-    color var(--transition);
+  transition: border-color var(--transition);
 }
 
 .cart-item__button:hover {
-  color: var(--text-on-accent);
-  background-color: var(--bg-accent);
+  border-color: var(--border-hover);
 }
 
 .cart-item__button:disabled {
   opacity: 0.4;
-  cursor: default;
   pointer-events: none;
 }
 

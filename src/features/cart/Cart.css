@@ -55,18 +55,11 @@
   padding: 10px 24px;
   border: 1px solid var(--border-accent);
   border-radius: var(--radius);
-  transition:
-    background-color var(--transition),
-    opacity var(--transition);
+  transition: border-color var(--transition);
 }
 
 .cart__button--continue {
   color: var(--text-accent);
-  background-color: var(--bg-page);
-}
-
-.cart__button--continue:hover {
-  background-color: var(--bg-card);
 }
 
 .cart__button--checkout {
@@ -74,8 +67,8 @@
   background-color: var(--bg-accent);
 }
 
-.cart__button--checkout:hover {
-  opacity: 0.85;
+.cart__button:hover:not(:disabled) {
+  border-color: var(--border-hover);
 }
 
 .cart__button:disabled {
@@ -95,7 +88,6 @@
   }
 
   .cart__promo {
-    align-self: stretch;
     width: 100%;
   }
 
