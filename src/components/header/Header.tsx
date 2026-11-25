@@ -1,11 +1,12 @@
 import { SearchBar } from '../shared/search-bar/SearchBar';
 import './Header.css';
-import { Link, NavLink } from 'react-router-dom';
-import { ROUTES } from '../../routes';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import { isSearchVisible, ROUTES } from '../../routes';
 import { useBurgerMenu } from './useBurgerMenu';
 
 export function Header() {
   const { isOpen, toggle, close } = useBurgerMenu();
+  const { pathname } = useLocation();
 
   return (
     <header className="header">
@@ -32,9 +33,11 @@ export function Header() {
             <span className="header__burger-bar"></span>
           </button>
         </div>
-        <div className="header__search-bar">
-          <SearchBar />
-        </div>
+        {isSearchVisible(pathname) && (
+          <div className="header__search-bar">
+            <SearchBar />
+          </div>
+        )}
         <div className={`header__nav${isOpen ? ' on' : ''}`}>
           <nav className="header__nav-links">
             <ul className="header__nav-list">
