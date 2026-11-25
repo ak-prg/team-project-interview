@@ -1,7 +1,3 @@
-export const CartPage = () => {
-  return (
-    <>
-      <div>Cart</div>
-    </>
-  );
-};
+import { Cart } from '../../features/cart/Cart';
+
+export const CartPage = () => <Cart />;

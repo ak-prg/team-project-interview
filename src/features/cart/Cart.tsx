@@ -8,14 +8,17 @@ import {
   getDecreasedQuantity,
   formatPrice,
 } from './cart-utils';
-import CartItemRow from './CartItemRow';
+import { CartItemRow } from './CartItemRow';
 import type { CartItem } from '../../types/cart.types';
 import type { RootState } from '../../store';
-import './CartPage.css';
+import './Cart.css';
+import { useNavigate } from 'react-router-dom';
+import { ROUTES } from '../../routes';
 
-const CartPage = () => {
+export const Cart = () => {
   const cart = useSelector((state: RootState) => state.cart.items);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [promoCode, setPromoCode] = useState('');
   const order = calculateOrderTotal(cart, promoCode);
 
@@ -41,19 +44,14 @@ const CartPage = () => {
     dispatch(removeItem(item.product.id));
   };
 
-  const handleCheckoutShopping = () => {
-    alert('Functionality to be added for future reference');
-  };
-
-  // TODO - redirect to catalog
   const handleContinueShopping = () => {
-    return;
+    navigate(ROUTES.HOME);
   };
 
   return (
     <div className="cart">
-      <h2 className="cart__title">
-        Total Cart Amount: ${formatPrice(calculateTotalAmount(cart))}
+      <h2 className="cart__title heading-text">
+        Сумма корзины: {formatPrice(calculateTotalAmount(cart))}
       </h2>
       <div className="cart__list">
         {cart.map((item: CartItem) => (
@@ -67,33 +65,32 @@ const CartPage = () => {
         ))}
       </div>
       <input
-        className="cart__promo"
-        placeholder="Promo code"
+        className="cart__promo body-text"
+        placeholder="Промокод"
         value={promoCode}
         onChange={(e) => setPromoCode(e.target.value)}
       />
       <div className="cart__total">
-        <p>Discount: −${formatPrice(order.discount)}</p>
-        <p>Delivery: ${formatPrice(order.delivery)}</p>
-        <p>Total: ${formatPrice(order.total)}</p>
+        <p className="body-text">Скидка: −{formatPrice(order.discount)}</p>
+        <p className="body-text">Доставка: {formatPrice(order.delivery)}</p>
+        <p className="total-text">Итого: {formatPrice(order.total)}</p>
       </div>
       <div className="cart__actions">
         <button
-          className="cart__button cart__button--continue"
+          className="cart__button cart__button--continue action-text"
           onClick={() => handleContinueShopping()}
         >
-          Continue Shopping
+          Продолжить покупки
         </button>
         <br />
         <button
-          className="cart__button cart__button--checkout"
-          onClick={handleCheckoutShopping}
+          className="cart__button cart__button--checkout action-text"
+          disabled
+          title="Скоро будет доступно"
         >
-          Checkout
+          Оформить заказ
         </button>
       </div>
     </div>
   );
 };
-
-export default CartPage;

@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [react()],
   root: SRC,
   cacheDir: resolve(__dirname, 'node_modules/.vite'),
-  publicDir: resolve(__dirname, 'public'),
+  publicDir: resolve(SRC, 'assets'),
   server: { port: 5173, open: true },
   base: './',
   build: {

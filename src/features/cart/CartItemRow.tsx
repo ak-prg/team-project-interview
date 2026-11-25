@@ -1,7 +1,12 @@
 import type { CartItemRowProps } from '../../types/cart.types';
-import { calculateTotalPrice, formatPrice } from './cart-utils';
+import {
+  calculateTotalPrice,
+  canIncreaseQuantity,
+  formatPrice,
+} from './cart-utils';
+import './CartItemRow.css';
 
-function CartItemRow({
+export function CartItemRow({
   item,
   onIncrement,
   onDecrement,
@@ -15,9 +20,9 @@ function CartItemRow({
         alt={item.product.name}
       />
       <div className="cart-item__details">
-        <div className="cart-item__name">{item.product.name}</div>
-        <div className="cart-item__price">
-          ${formatPrice(item.product.price)}
+        <div className="cart-item__name title-text">{item.product.name}</div>
+        <div className="cart-item__price body-text">
+          {formatPrice(item.product.price)}
         </div>
         <div className="cart-item__quantity">
           <button
@@ -26,23 +31,27 @@ function CartItemRow({
           >
             -
           </button>
-          <span className="cart-item__quantity-value">{item.quantity}</span>
+          <span className="cart-item__quantity-value title-text">
+            {item.quantity}
+          </span>
           <button
             className="cart-item__button cart-item__button--increment"
             onClick={() => onIncrement(item)}
+            disabled={!canIncreaseQuantity(item)}
           >
             +
           </button>
         </div>
-        <div className="cart-item__total">
-          Total: ${formatPrice(calculateTotalPrice(item))}
+        <div className="cart-item__total title-text">
+          Сумма: {formatPrice(calculateTotalPrice(item))}
         </div>
-        <button className="cart-item__delete" onClick={() => onRemove(item)}>
-          Delete
+        <button
+          className="cart-item__delete body-text"
+          onClick={() => onRemove(item)}
+        >
+          Удалить
         </button>
       </div>
     </div>
   );
 }
-
-export default CartItemRow;
