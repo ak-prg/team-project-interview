@@ -67,6 +67,35 @@
 
 .header__burger {
   display: none;
+  outline: 1px solid transparent;
+  outline-offset: 6px;
+  transition: outline-color var(--transition);
+}
+
+/* Hover: red underline for links, red frame for buttons */
+
+.header a {
+  position: relative;
+}
+
+.header a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: var(--border-hover);
+  transform: translateX(-50%);
+  transition: width var(--transition);
+}
+
+.header a:hover::after {
+  width: 100%;
+}
+
+.header__burger:hover {
+  outline-color: var(--border-hover);
 }
 
 @media (max-width: 1439px) {

@@ -15,4 +15,11 @@
 .search-bar__button {
   color: var(--text-on-accent);
   font-weight: var(--font-weight-regular);
+  outline: 1px solid transparent;
+  outline-offset: 4px;
+  transition: outline-color var(--transition);
+}
+
+.search-bar__button:hover {
+  outline-color: var(--border-hover);
 }
