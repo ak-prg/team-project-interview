@@ -5,6 +5,7 @@ export type Product = {
   origNumber: string;
   name: string;
   producer: string;
+  category: string;
   images: string[];
   price: number;
   stock: number;

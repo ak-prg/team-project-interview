@@ -6,6 +6,7 @@
     "origNumber": "55367S1150",
     "name": "Амортизатор подвески HYUNDAI",
     "producer": "HYUNDAI",
+    "category": "Ходовая",
     "images": [
       "parts/L0431_1.webp",
       "parts/L0431_2.webp",
@@ -21,6 +22,7 @@
     "origNumber": "31471816",
     "name": "Диск тормозной задний 320x20 Volvo",
     "producer": "ATE",
+    "category": "Тормозная система",
     "images": [
       "parts/L0513_1.webp",
       "parts/L0513_2.webp",
@@ -37,6 +39,7 @@
     "origNumber": "31400569",
     "name": "Диск тормозной передний 366x30 Volvo",
     "producer": "BREMBO",
+    "category": "Тормозная система",
     "images": [
       "parts/L0509_1.webp",
       "parts/L0509_2.webp",
@@ -54,6 +57,7 @@
     "origNumber": "32373126",
     "name": "Колодки дисковые передние 180x75x18 Volvo",
     "producer": "A.B.S.",
+    "category": "Тормозная система",
     "images": ["parts/L0510_1.webp", "parts/L0510_2.webp"],
     "price": 16428,
     "stock": 1
@@ -65,6 +69,7 @@
     "origNumber": "221411601",
     "name": "Колодки тормозные дисковые Volvo S",
     "producer": "BREMBO",
+    "category": "Тормозная система",
     "images": [
       "parts/L0244_11.webp",
       "parts/L0244_12.webp",
@@ -80,6 +85,7 @@
     "origNumber": "221411601",
     "name": "Колодки тормозные дисковые Volvo S",
     "producer": "ZIMMERMANN",
+    "category": "Тормозная система",
     "images": [
       "parts/L0244_21.webp",
       "parts/L0244_22.webp",
@@ -95,6 +101,7 @@
     "origNumber": "31370166",
     "name": "Прокладка впускного коллектора Volvo",
     "producer": "VICTOR REINZ",
+    "category": "Впускная система",
     "images": [
       "parts/L0512_1.webp",
       "parts/L0512_2.webp",
@@ -110,6 +117,7 @@
     "origNumber": "31370167",
     "name": "Прокладка дросселя volvo S60",
     "producer": "VOLVO",
+    "category": "Впускная система",
     "images": ["parts/L0516_1.webp", "parts/L0516_2.webp"],
     "price": 3600,
     "stock": 1
@@ -121,6 +129,7 @@
     "origNumber": "31461861",
     "name": "Прокладка клапанной крышки Volvo",
     "producer": "VOLVO",
+    "category": "Двигатель",
     "images": ["parts/L0511_1.webp", "parts/L0511_2.webp"],
     "price": 21192,
     "stock": 1
@@ -132,6 +141,7 @@
     "origNumber": "242926",
     "name": "Ремкомплект дискового тормоза с поршнем Volvo S",
     "producer": "FRENKIT",
+    "category": "Тормозная система",
     "images": [
       "parts/L0246_1.webp",
       "parts/L0246_2.webp",
@@ -147,6 +157,7 @@
     "origNumber": "31437319",
     "name": "Сальник КПП 40х63х8 Volvo S40/V40/S70/V70/S80",
     "producer": "CORTECO",
+    "category": "Трансмиссия и КПП",
     "images": [
       "parts/L0180_1.webp",
       "parts/L0180_2.webp",
@@ -162,6 +173,7 @@
     "origNumber": "31407748",
     "name": "Фильтр салона угольный Volvo XC90",
     "producer": "SAKURA",
+    "category": "Фильтры",
     "images": [
       "parts/L0400_1.webp",
       "parts/L0400_2.webp",
@@ -178,7 +190,8 @@
     "origNumber": "8450000255",
     "name": "Эмблема решетки радиатора LADA",
     "producer": "LADA",
-    "images": [],
+    "category": "Кузовные детали",
+    "images": ["parts/L0606_1.webp", "parts/L0606_2.webp"],
     "price": 1896,
     "stock": 1
   },
@@ -189,7 +202,8 @@
     "origNumber": "1J2721403A",
     "name": "Катализатор коллекторный керамический VW",
     "producer": "FORTLUFT",
-    "images": [],
+    "category": "Выпускная система",
+    "images": ["parts/L0589_1.webp", "parts/L0589_2.webp"],
     "price": 45558,
     "stock": 1
   },
@@ -200,7 +214,8 @@
     "origNumber": "7701208408",
     "name": "Замок зажигания Renault Logan II",
     "producer": "QUARTZ",
-    "images": [],
+    "category": "Система питания",
+    "images": ["parts/L0636_1.webp", "parts/L0636_2.webp"],
     "price": 6486,
     "stock": 1
   },
@@ -211,6 +226,7 @@
     "origNumber": "511655594R",
     "name": "Заглушка бампера крюка буксировки Renault",
     "producer": "GOOD GO",
+    "category": "Кузовные детали",
     "images": [
       "parts/L0560_1.webp",
       "parts/L0560_2.webp",
@@ -226,6 +242,7 @@
     "origNumber": "485211105R",
     "name": "Тяга рулевая Renault Dokker",
     "producer": "RTS",
+    "category": "Ходовая",
     "images": ["parts/L0118_1.webp"],
     "price": 4272,
     "stock": 2
@@ -237,6 +254,7 @@
     "origNumber": "3G0827503B",
     "name": "Замок крышки багажника: AUDI A1 2010-,A3 2012",
     "producer": "NTY",
+    "category": "Кузовные детали",
     "images": ["parts/L0328_1.webp"],
     "price": 7506,
     "stock": 1
@@ -248,6 +266,7 @@
     "origNumber": "110605536R",
     "name": "Термостат RENAULT",
     "producer": "GATES",
+    "category": "Система охлаждения",
     "images": ["parts/L0461_1.webp", "parts/L0461_2.webp"],
     "price": 10986,
     "stock": 1
@@ -259,6 +278,7 @@
     "origNumber": "6PK1722S",
     "name": "Ремень поликлиновой",
     "producer": "DAYCO",
+    "category": "Система ГРМ",
     "images": ["parts/L0308_1.webp"],
     "price": 4194,
     "stock": 1
@@ -270,7 +290,12 @@
     "origNumber": "7700435694",
     "name": "Ручка крышки багажника RENAULT",
     "producer": "FAST",
-    "images": ["parts/L0583_1.webp"],
+    "category": "Кузовные детали",
+    "images": [
+      "parts/L0583_1.webp",
+      "parts/L0583_2.webp",
+      "parts/L0583_3.webp"
+    ],
     "price": 10806,
     "stock": 1
   },
@@ -280,8 +305,9 @@
     "partNumber": "310055_EA1",
     "origNumber": "04L253725B",
     "name": "Соединение фланцевое в сборе D55 Audi Seat Skoda VW",
+    "category": "Выпускная система",
     "producer": "EAG",
-    "images": [],
+    "images": ["parts/L0602_1.webp", "parts/L0602_2.webp"],
     "price": 3282,
     "stock": 1
   },
@@ -292,6 +318,7 @@
     "origNumber": "3C0253725",
     "name": "Хомут глушителя FA1 Renault Megane D70",
     "producer": "FA1",
+    "category": "Выпускная система",
     "images": ["parts/6648_1.webp"],
     "price": 822,
     "stock": 1
@@ -303,6 +330,7 @@
     "origNumber": "А63R42610620001",
     "name": "Моторедуктор привода двери новой конструкции MoveWell Газель-NTXT",
     "producer": "RS DETAL",
+    "category": "Кузовные детали",
     "images": ["parts/31015_1.webp"],
     "price": 17982,
     "stock": 1
@@ -314,6 +342,7 @@
     "origNumber": "А62R23-3778020-10",
     "name": "Шестерня ведущего вала Газель Некст",
     "producer": "Gaz",
+    "category": "Кузовные детали",
     "images": ["parts/31228_1.webp"],
     "price": 4339,
     "stock": 2
