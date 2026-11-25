@@ -1,3 +1,4 @@
+import { SearchBar } from '../shared/search-bar/SearchBar';
 import './Header.css';
 
 export function Header() {
@@ -22,7 +23,9 @@ export function Header() {
             <span className="header__burger-bar"></span>
           </button>
         </div>
-        <div className="header__search-bar"></div>
+        <div className="header__search-bar">
+          <SearchBar />
+        </div>
         <div className="header__nav">
           <nav className="header__nav-links">
             <ul className="header__nav-list">
