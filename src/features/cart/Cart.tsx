@@ -82,7 +82,6 @@ export const Cart = () => {
         >
           Продолжить покупки
         </button>
-        <br />
         <button
           className="cart__button cart__button--checkout action-text"
           disabled

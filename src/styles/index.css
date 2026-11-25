@@ -11,6 +11,8 @@
   --font-size-total: 20px;
   --font-size-title: 16px;
   --font-size-body: 14px;
+  --font-size-caption: 12px;
+  --font-size-caption-small: 8px;
 
   --text-primary: #35353b;
   --text-secondary: rgb(53 53 59 / 60%);
@@ -98,4 +100,9 @@ img {
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
+}
+
+.caption-text {
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-semibold);
 }

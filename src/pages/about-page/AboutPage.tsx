@@ -1,7 +1,9 @@
+import { About } from '../../features/about/About';
+
 export const AboutPage = () => {
   return (
     <>
-      <div>About Us</div>
+      <About />
     </>
   );
 };
