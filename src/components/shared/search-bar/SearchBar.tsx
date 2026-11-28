@@ -16,6 +16,7 @@ export function SearchBar({ onSearch }: SearchBarProps) {
         type="search"
         placeholder="Введите точный номер"
         name="query"
+        aria-label="Поиск по номеру запчасти"
       />
       <button className="search-bar__button title-text" type="submit">
         поиск
