@@ -7,6 +7,7 @@ import {
   getIncreasedQuantity,
   getDecreasedQuantity,
   formatPrice,
+  isPromoCodeValid,
 } from './cart-utils';
 import { CartItemRow } from './CartItemRow';
 import type { CartItem } from '../../types/cart.types';
@@ -14,6 +15,7 @@ import type { RootState } from '../../store';
 import './Cart.css';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../routes';
+import { DISCOUNT_PERCENT, PROMO_MIN_SUBTOTAL } from '../../constants';
 
 export const Cart = () => {
   const cart = useSelector((state: RootState) => state.cart.items);
@@ -22,6 +24,21 @@ export const Cart = () => {
   const [promoCode, setPromoCode] = useState('');
   const order = calculateOrderTotal(cart, promoCode);
   const isEmpty = cart.length === 0;
+  let promoMessage = '';
+  let promoStatus = '';
+
+  if (promoCode.trim()) {
+    if (!isPromoCodeValid(promoCode)) {
+      promoMessage = 'Промокод не найден';
+      promoStatus = 'error';
+    } else if (order.discount > 0) {
+      promoMessage = `Скидка ${DISCOUNT_PERCENT}% применена`;
+      promoStatus = 'success';
+    } else {
+      promoMessage = `Промокод действует при заказе от ${formatPrice(PROMO_MIN_SUBTOTAL)}`;
+      promoStatus = 'info';
+    }
+  }
 
   const handleIncrement = (item: CartItem) => {
     dispatch(
@@ -76,6 +93,12 @@ export const Cart = () => {
             value={promoCode}
             onChange={(e) => setPromoCode(e.target.value)}
           />
+          <p
+            className={`cart__promo-message body-text${promoStatus ? ` cart__promo-message--${promoStatus}` : ''}`}
+            role="status"
+          >
+            {promoMessage}
+          </p>
         </>
       )}
 

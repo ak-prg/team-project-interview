@@ -34,6 +34,9 @@
 
   --screen-desktop: 1440px;
   --screen-tablet: 800px;
+
+  --text-success: #2e7d32;
+  --text-error: #d32f2f;
 }
 
 /* Global */

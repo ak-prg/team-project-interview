@@ -27,6 +27,24 @@
   border: none;
 }
 
+.cart__promo-message {
+  align-self: flex-end;
+  min-height: 1.2em;
+  margin-top: -8px;
+}
+
+.cart__promo-message--success {
+  color: var(--text-success);
+}
+
+.cart__promo-message--error {
+  color: var(--text-error);
+}
+
+.cart__promo-message--info {
+  color: var(--text-secondary);
+}
+
 .cart__total {
   display: flex;
   flex-direction: column;
