@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
+import { DESKTOP_BREAKPOINT } from '../../constants';
 
-const DESKTOP_QUERY = '(min-width: 800px)';
+const DESKTOP_QUERY = `(min-width: ${DESKTOP_BREAKPOINT}px)`;
 
 export const useBurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
