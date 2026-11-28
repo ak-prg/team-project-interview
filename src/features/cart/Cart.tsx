@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, updateQuantity } from './cartSlice';
 import {
-  calculateTotalAmount,
+  calculateCartSubtotal,
   calculateOrderTotal,
   getIncreasedQuantity,
   getDecreasedQuantity,
@@ -51,7 +51,7 @@ export const Cart = () => {
   return (
     <div className="cart">
       <h2 className="cart__title heading-text">
-        Сумма корзины: {formatPrice(calculateTotalAmount(cart))}
+        Сумма корзины: {formatPrice(calculateCartSubtotal(cart))}
       </h2>
       <div className="cart__list">
         {cart.map((item: CartItem) => (
