@@ -55,27 +55,22 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             </div>
           ))}
         </div>
-
-        <div className="product-card__footer">
-          <div className="product-card__price">
-            <span className="product-card__label">Цена с НДС:</span>
-            <span className="product-card__price-value title-text">
-              {formatPrice(product.price)}
-            </span>
-          </div>
-
-          <button
-            className="product-card__button action-text"
-            onClick={handleAddToCart}
-            disabled={isOutOfStock}
-          >
-            {isOutOfStock
-              ? 'Нет в наличии'
-              : inCart
-                ? 'В корзине'
-                : 'В корзину'}
-          </button>
+      </div>
+      <div className="product-card__aside">
+        <div className="product-card__price">
+          <span className="product-card__label">Цена с НДС:</span>
+          <span className="product-card__price-value title-text">
+            {formatPrice(product.price)}
+          </span>
         </div>
+
+        <button
+          className="product-card__button action-text"
+          onClick={handleAddToCart}
+          disabled={isOutOfStock}
+        >
+          {isOutOfStock ? 'Нет в наличии' : inCart ? 'В корзине' : 'В корзину'}
+        </button>
       </div>
     </article>
   );

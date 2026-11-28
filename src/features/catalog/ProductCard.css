@@ -1,14 +1,15 @@
 .product-card {
   display: flex;
   gap: 24px;
-  padding: 16px;
+  padding: 8px 16px;
   background-color: var(--bg-card);
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
   align-items: center;
   width: 100%;
   max-width: 1280px;
-  height: 130px;
+  height: auto;
+  min-height: 136px;
   box-sizing: border-box;
   margin: 0 auto;
 }
@@ -22,8 +23,8 @@
   border-radius: var(--radius);
   overflow: hidden;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .product-card__image {
@@ -44,7 +45,6 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 4px;
-  height: 100%;
 }
 
 .product-card__title {
@@ -67,7 +67,7 @@
 
 .product-card__info-row {
   display: grid;
-  grid-template-columns: 160px 1fr;
+  grid-template-columns: 120px 1fr;
   gap: 8px;
   align-items: baseline;
 }
@@ -81,11 +81,12 @@
   color: var(--text-strong);
 }
 
-.product-card__footer {
+.product-card__aside {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 16px;
 }
 
 .product-card__price {
@@ -120,14 +121,14 @@
 @media (max-width: 799px) {
   .product-card {
     max-width: 720px;
-    height: 130px;
+    height: auto;
     flex-direction: row;
     padding: 8px;
     gap: 12px;
   }
 
   .product-card__image-wrapper {
-    width: 100px;
+    width: 120px;
     height: 100%;
   }
 
@@ -146,19 +147,53 @@
     gap: 2px;
   }
 
-  .product-card__footer {
-    flex-direction: row;
-    align-items: center;
+  .product-card__aside {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 8px;
   }
 
   .product-card__price {
+    display: flex;
+    flex-direction: column;
     gap: 4px;
   }
 
   .product-card__button {
     padding: 6px 12px;
     font-size: var(--font-size-caption);
+  }
+}
+
+@media (max-width: 530px) {
+  .product-card {
+    height: auto;
+    flex-wrap: wrap;
+    padding-bottom: 12px;
+  }
+  .product-card__content {
+    flex: 1 1 180px;
+  }
+
+  .product-card__aside {
+    flex: 1 1 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+
+  .product-card__price {
+    flex-direction: row;
+    gap: 8px;
+    align-items: baseline;
+  }
+
+  .product-card__label {
+    flex-wrap: wrap;
+    color: var(--text-muted);
+    word-break: break-word;
   }
 }
 
