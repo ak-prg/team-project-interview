@@ -13,6 +13,7 @@ import {
   calculateOrderTotal,
   calculateDeliveryCosts,
   calculateDiscount,
+  isPromoCodeValid,
 } from './cart-utils';
 
 import {
@@ -201,23 +202,8 @@ describe('calculateDiscount', () => {
     expect(calculateDiscount(PROMO_CODE, PROMO_MIN_SUBTOTAL - 1)).toBe(0);
   });
 
-  test('принимает промокод в нижнем регистре и с пробелами', () => {
-    const code = `  ${PROMO_CODE.toLowerCase()} `;
-    expect(calculateDiscount(code, PROMO_MIN_SUBTOTAL)).toBe(
-      getDiscount(PROMO_MIN_SUBTOTAL)
-    );
-  });
-
-  test('игнорирует неизвестный промокод', () => {
+  test('не даёт скидку с неверным промокодом', () => {
     expect(calculateDiscount('HELLO', PROMO_MIN_SUBTOTAL)).toBe(0);
-  });
-
-  test('не даёт скидку без промокода', () => {
-    expect(calculateDiscount('', PROMO_MIN_SUBTOTAL)).toBe(0);
-  });
-
-  test('не применяет скидку дважды при повторе промокода в строке', () => {
-    expect(calculateDiscount(PROMO_CODE.repeat(2), PROMO_MIN_SUBTOTAL)).toBe(0);
   });
 
   test('считает скидку 10% от суммы', () => {
@@ -227,6 +213,33 @@ describe('calculateDiscount', () => {
   test('округляет скидку до целых копеек', () => {
     const discount = calculateDiscount(PROMO_CODE, PROMO_MIN_SUBTOTAL + 5);
     expect(Number.isInteger(discount)).toBe(true);
+  });
+});
+
+describe('isPromoCodeValid', () => {
+  test('принимает правильный промокод', () => {
+    expect(isPromoCodeValid(PROMO_CODE)).toBe(true);
+  });
+
+  test('принимает промокод в нижнем регистре и с пробелами', () => {
+    expect(isPromoCodeValid(`  ${PROMO_CODE.toLowerCase()} `)).toBe(true);
+  });
+
+  test('отклоняет неизвестный промокод', () => {
+    expect(isPromoCodeValid('HELLO')).toBe(false);
+  });
+
+  test('отклоняет пустую строку', () => {
+    expect(isPromoCodeValid('')).toBe(false);
+  });
+
+  test('отклоняет строку из пробелов', () => {
+    expect(isPromoCodeValid('   ')).toBe(false);
+  });
+
+  test('отклоняет промокод с лишними символами', () => {
+    expect(isPromoCodeValid(`${PROMO_CODE}1`)).toBe(false);
+    expect(isPromoCodeValid(PROMO_CODE.repeat(2))).toBe(false);
   });
 });
 
