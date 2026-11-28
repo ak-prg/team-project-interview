@@ -1,7 +1,7 @@
 import { SearchBar } from '../shared/search-bar/SearchBar';
 import './Header.css';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { isSearchVisible, ROUTES } from '../../routes';
+import { isNavVisible, isSearchVisible, ROUTES } from '../../routes';
 import { useBurgerMenu } from './useBurgerMenu';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../../store';
@@ -36,43 +36,47 @@ export function Header() {
               <span className="header__menu-text">ВОЙТИ</span>
             </div>
           </div>
-          <button
-            className={`header__burger${isOpen ? ' on' : ''}`}
-            type="button"
-            aria-label={isOpen ? 'Закрыть меню' : 'Открыть меню'}
-            aria-expanded={isOpen}
-            aria-controls="main-nav"
-            onClick={toggle}
-            ref={burgerRef}
-          >
-            <span className="header__burger-bar"></span>
-            <span className="header__burger-bar"></span>
-            <span className="header__burger-bar"></span>
-          </button>
+          {isNavVisible(pathname) && (
+            <button
+              className={`header__burger${isOpen ? ' on' : ''}`}
+              type="button"
+              aria-label={isOpen ? 'Закрыть меню' : 'Открыть меню'}
+              aria-expanded={isOpen}
+              aria-controls="main-nav"
+              onClick={toggle}
+              ref={burgerRef}
+            >
+              <span className="header__burger-bar"></span>
+              <span className="header__burger-bar"></span>
+              <span className="header__burger-bar"></span>
+            </button>
+          )}
         </div>
         {isSearchVisible(pathname) && (
           <div className="header__search-bar">
             <SearchBar onSearch={() => {}} />
           </div>
         )}
-        <div className={`header__nav${isOpen ? ' on' : ''}`}>
-          <nav className="header__nav-links" id="main-nav" ref={menuRef}>
-            <ul className="header__nav-list">
-              <li className="header__nav-item">
-                <NavLink to={ROUTES.HOME} onClick={close}>
-                  ЗАПЧАСТИ
-                </NavLink>
-              </li>
-              <li className="header__nav-item">ДОСТАВКА И ОПЛАТА</li>
-              <li className="header__nav-item">
-                <NavLink to={ROUTES.ABOUT} onClick={close}>
-                  О НАС
-                </NavLink>
-              </li>
-              <li className="header__nav-item">КОНТАКТЫ</li>
-            </ul>
-          </nav>
-        </div>
+        {isNavVisible(pathname) && (
+          <div className={`header__nav${isOpen ? ' on' : ''}`}>
+            <nav className="header__nav-links" id="main-nav" ref={menuRef}>
+              <ul className="header__nav-list">
+                <li className="header__nav-item">
+                  <NavLink to={ROUTES.HOME} onClick={close}>
+                    ЗАПЧАСТИ
+                  </NavLink>
+                </li>
+                <li className="header__nav-item">ДОСТАВКА И ОПЛАТА</li>
+                <li className="header__nav-item">
+                  <NavLink to={ROUTES.ABOUT} onClick={close}>
+                    О НАС
+                  </NavLink>
+                </li>
+                <li className="header__nav-item">КОНТАКТЫ</li>
+              </ul>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );
