@@ -11,3 +11,6 @@ export const buildPath = {
 } as const;
 
 export type PartRouteParams = { id: string };
+
+export const isSearchVisible = (pathname: string): boolean =>
+  pathname !== ROUTES.ABOUT;

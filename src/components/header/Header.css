@@ -1,0 +1,231 @@
+.header {
+  padding: 1.25rem;
+  background-color: var(--bg-accent);
+  color: var(--text-on-accent);
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 16px 40px 0px;
+}
+
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo-wrapper {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  font-size: var(--font-size-logo);
+  font-weight: var(--font-weight-bold);
+  margin-left: 20px;
+}
+
+.header__menu-wrapper {
+  display: flex;
+  gap: 28px;
+}
+
+.header__menu-text {
+  font-size: var(--font-size-total);
+  font-weight: var(--font-weight-semibold);
+}
+
+.header__search-bar {
+  align-self: flex-end;
+  width: 100%;
+  max-width: 970px;
+  padding-right: 12px;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__nav-links {
+  max-width: 970px;
+  width: 100%;
+}
+
+.header__nav-list {
+  display: flex;
+  gap: 58px;
+}
+
+.header__nav-item {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-semibold);
+}
+
+.header__burger {
+  display: none;
+  outline: 1px solid transparent;
+  outline-offset: 6px;
+  transition: outline-color var(--transition);
+}
+
+/* Hover: red underline for links, red frame for buttons */
+
+.header a {
+  position: relative;
+}
+
+.header a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: var(--border-hover);
+  transform: translateX(-50%);
+  transition: width var(--transition);
+}
+
+.header a:hover::after {
+  width: 100%;
+}
+
+.header__burger:hover {
+  outline-color: var(--border-hover);
+}
+
+@media (max-width: 1439px) {
+  .header {
+    padding-top: 0;
+  }
+
+  .header__container {
+    padding: 9px 5px 0 20px;
+  }
+
+  .header__logo {
+    margin-left: 0;
+  }
+
+  .header__menu-wrapper {
+    gap: 48px;
+  }
+
+  /* negative margin is a workaround for an inconsistency in Figma */
+  .header__search-bar {
+    max-width: 670px;
+    padding-right: 0;
+    margin-right: -12px;
+  }
+
+  .header__nav-links {
+    max-width: 650px;
+  }
+}
+
+@media (max-width: 799px) {
+  .header {
+    padding-top: 0;
+  }
+
+  .header__container {
+    padding-left: 15px;
+  }
+
+  .header__top {
+    align-items: flex-start;
+  }
+
+  .header__logo-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .header__menu-wrapper {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+
+  .header__search-bar {
+    max-width: none;
+    padding-right: 8px;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+
+  .header__search-bar .search-bar {
+    gap: 8px;
+  }
+
+  .header__nav {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    background-color: var(--bg-accent);
+    transition:
+      right var(--transition),
+      visibility var(--transition);
+  }
+
+  .header__nav.on {
+    right: 0;
+    visibility: visible;
+  }
+
+  .header__nav-links {
+    width: auto;
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .header__burger {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 26px;
+    position: relative;
+    z-index: 110;
+  }
+
+  .header__burger.on .header__burger-bar:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+  }
+
+  .header__burger.on .header__burger-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header__burger.on .header__burger-bar:nth-child(3) {
+    transform: translateY(-12px) rotate(-45deg);
+  }
+
+  .header__burger-bar {
+    width: 40px;
+    height: 4px;
+    background-color: var(--text-on-accent);
+    transition:
+      transform var(--transition),
+      opacity var(--transition);
+  }
+
+  .header__menu-text {
+    font-size: var(--font-size-title);
+  }
+}
