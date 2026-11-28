@@ -5,7 +5,7 @@ import { isSearchVisible, ROUTES } from '../../routes';
 import { useBurgerMenu } from './useBurgerMenu';
 
 export function Header() {
-  const { isOpen, toggle, close } = useBurgerMenu();
+  const { isOpen, toggle, close, burgerRef, menuRef } = useBurgerMenu();
   const { pathname } = useLocation();
 
   return (
@@ -28,6 +28,7 @@ export function Header() {
             aria-expanded={isOpen}
             aria-controls="main-nav"
             onClick={toggle}
+            ref={burgerRef}
           >
             <span className="header__burger-bar"></span>
             <span className="header__burger-bar"></span>
@@ -40,7 +41,7 @@ export function Header() {
           </div>
         )}
         <div className={`header__nav${isOpen ? ' on' : ''}`}>
-          <nav className="header__nav-links">
+          <nav className="header__nav-links" id="main-nav" ref={menuRef}>
             <ul className="header__nav-list">
               <li className="header__nav-item">
                 <NavLink to={ROUTES.HOME} onClick={close}>
