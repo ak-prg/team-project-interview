@@ -50,12 +50,14 @@ export const calculateDeliveryCosts = (
     : DELIVERY_COST;
 };
 
+export const isPromoCodeValid = (promoCode: string): boolean =>
+  promoCode.trim().toUpperCase() === PROMO_CODE;
+
 export const calculateDiscount = (
   promoCode: string,
   subtotal: number
 ): number => {
-  return subtotal >= PROMO_MIN_SUBTOTAL &&
-    promoCode.trim().toUpperCase() === PROMO_CODE
+  return subtotal >= PROMO_MIN_SUBTOTAL && isPromoCodeValid(promoCode)
     ? Math.round(subtotal * (DISCOUNT_PERCENT / 100))
     : 0;
 };
