@@ -63,7 +63,7 @@ export const Cart = () => {
   };
 
   const handleContinueShopping = () => {
-    navigate(ROUTES.HOME);
+    navigate(ROUTES.CATALOG);
   };
 
   return (

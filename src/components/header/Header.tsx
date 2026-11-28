@@ -19,7 +19,7 @@ export function Header() {
       <div className="container header__container">
         <div className="header__top">
           <div className="header__logo-wrapper">
-            <Link className="header__logo" to={ROUTES.HOME}>
+            <Link className="header__logo" to={ROUTES.CATALOG}>
               PARTS.BY
             </Link>
             <div className="header__menu-wrapper">
@@ -62,7 +62,7 @@ export function Header() {
             <nav className="header__nav-links" id="main-nav" ref={menuRef}>
               <ul className="header__nav-list">
                 <li className="header__nav-item">
-                  <NavLink to={ROUTES.HOME} onClick={close}>
+                  <NavLink to={ROUTES.CATALOG} onClick={close}>
                     ЗАПЧАСТИ
                   </NavLink>
                 </li>
