@@ -3,20 +3,35 @@ import './Header.css';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { isSearchVisible, ROUTES } from '../../routes';
 import { useBurgerMenu } from './useBurgerMenu';
+import { useSelector } from 'react-redux';
+import type { RootState } from '../../store';
+import { calculateTotalQuantity } from '../../features/cart/cart-utils';
 
 export function Header() {
   const { isOpen, toggle, close, burgerRef, menuRef } = useBurgerMenu();
   const { pathname } = useLocation();
+  const cartCount = useSelector((state: RootState) =>
+    calculateTotalQuantity(state.cart.items)
+  );
 
   return (
     <header className="header">
       <div className="container header__container">
         <div className="header__top">
           <div className="header__logo-wrapper">
-            <span className="header__logo">PARTS.BY</span>
+            <Link className="header__logo" to={ROUTES.HOME}>
+              PARTS.BY
+            </Link>
             <div className="header__menu-wrapper">
-              <Link className="header__menu-text" to={ROUTES.CART}>
+              <Link
+                className="header__menu-text"
+                to={ROUTES.CART}
+                aria-label={`Корзина, товаров: ${cartCount}`}
+              >
                 КОРЗИНА
+                {cartCount > 0 && (
+                  <span className="header__cart-count">{cartCount}</span>
+                )}
               </Link>
               <span className="header__menu-text">ВОЙТИ</span>
             </div>
