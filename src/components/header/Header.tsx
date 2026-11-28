@@ -28,12 +28,12 @@ export function Header() {
                 to={ROUTES.CART}
                 aria-label={`Корзина, товаров: ${cartCount}`}
               >
-                КОРЗИНА
+                корзина
                 {cartCount > 0 && (
                   <span className="header__cart-count">{cartCount}</span>
                 )}
               </Link>
-              <span className="header__menu-text">ВОЙТИ</span>
+              <span className="header__menu-text">войти</span>
             </div>
           </div>
           {isNavVisible(pathname) && (
@@ -63,16 +63,16 @@ export function Header() {
               <ul className="header__nav-list">
                 <li className="header__nav-item">
                   <NavLink to={ROUTES.HOME} onClick={close}>
-                    ЗАПЧАСТИ
+                    запчасти
                   </NavLink>
                 </li>
-                <li className="header__nav-item">ДОСТАВКА И ОПЛАТА</li>
+                <li className="header__nav-item">доставка и оплата</li>
                 <li className="header__nav-item">
                   <NavLink to={ROUTES.ABOUT} onClick={close}>
-                    О НАС
+                    о нас
                   </NavLink>
                 </li>
-                <li className="header__nav-item">КОНТАКТЫ</li>
+                <li className="header__nav-item">контакты</li>
               </ul>
             </nav>
           </div>

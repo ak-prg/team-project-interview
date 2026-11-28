@@ -42,6 +42,7 @@
 .header__menu-text {
   font-size: var(--font-size-total);
   font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
 }
 
 .header__search-bar {
@@ -69,6 +70,7 @@
 .header__nav-item {
   font-size: var(--font-size-title);
   font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
 }
 
 .header__burger {
