@@ -10,8 +10,8 @@ export function Footer() {
           <ul className="footer__links caption-text">
             {TEAM.map(({ login, url }) => (
               <li key={login}>
-                <a href={url} target="_blank">
-                  {url}
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                  {login}
                 </a>
               </li>
             ))}
@@ -20,7 +20,12 @@ export function Footer() {
 
         <span className="footer__year title-text">2026</span>
 
-        <a className="footer__school" href="https://rs.school/" target="_blank">
+        <a
+          className="footer__school"
+          href="https://rs.school/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src="/school.svg" alt="RS School" />
         </a>
       </div>
