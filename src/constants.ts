@@ -9,6 +9,7 @@ export const TEAM = [
   {
     login: 'ak-prg',
     url: 'https://github.com/ak-prg',
+    photo: '/team/ak-prg.webp',
     contribution:
       'Корзина, страница "О нас". ' +
       'Lorem ipsum dolor sit amet, ' +
@@ -23,6 +24,7 @@ export const TEAM = [
   {
     login: 'rockabil',
     url: 'https://github.com/rockabil',
+    photo: '/team/rockabil.webp',
     contribution:
       'Дизайн в Figma, роутинг. ' +
       'Lorem ipsum dolor sit amet, ' +
