@@ -13,16 +13,24 @@ export const About = () => {
       <ul className="about__team">
         {TEAM.map((member) => (
           <li key={member.login} className="about__member">
-            <a
-              className="about__member-link title-text"
-              href={member.url}
-              target="_blank"
-            >
-              {member.login}
-            </a>
-            <p className="about__member-contribution body-text">
-              {member.contribution}
-            </p>
+            <img
+              className="about__photo"
+              src={member.photo}
+              alt={`Фото ${member.login}`}
+            />
+            <div className="about__member-info">
+              <a
+                className="about__member-link title-text"
+                href={member.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {member.login}
+              </a>
+              <p className="about__member-contribution body-text">
+                {member.contribution}
+              </p>
+            </div>
           </li>
         ))}
       </ul>
