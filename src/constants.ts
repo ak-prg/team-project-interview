@@ -49,3 +49,5 @@ export const CATEGORIES = [
   'Система охлаждения',
   'Система ГРМ',
 ] as const;
+
+export type Category = (typeof CATEGORIES)[number];
