@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;600;700&display=swap');
 /* Variables (Figma) */
 
 :root {
@@ -13,6 +12,8 @@
   --font-size-body: 14px;
   --font-size-caption: 12px;
   --font-size-caption-small: 8px;
+  --font-weight-bold: 700;
+  --font-size-logo: 36px;
 
   --text-primary: #35353b;
   --text-secondary: rgb(53 53 59 / 60%);
@@ -30,6 +31,9 @@
   --shadow-card: 0 1px 3px rgb(0 0 0 / 15%);
   --radius: 5px;
   --transition: 0.2s ease;
+
+  --screen-desktop: 1440px;
+  --screen-tablet: 800px;
 }
 
 /* Global */
@@ -105,4 +109,19 @@ img {
 .caption-text {
   font-size: var(--font-size-caption);
   font-weight: var(--font-weight-semibold);
+}
+
+/* Layout */
+
+.container {
+  max-width: var(--screen-desktop);
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
