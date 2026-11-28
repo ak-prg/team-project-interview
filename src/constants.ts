@@ -4,6 +4,7 @@ export const FREE_DELIVERY_FROM = 100000;
 export const DELIVERY_COST = 30000;
 export const PROMO_MIN_SUBTOTAL = 20000;
 export const DESKTOP_BREAKPOINT = 800;
+export const CART_STORAGE_KEY = 'parts-by-cart';
 
 export const TEAM = [
   {
