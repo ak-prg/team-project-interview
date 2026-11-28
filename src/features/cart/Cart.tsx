@@ -21,6 +21,7 @@ export const Cart = () => {
   const navigate = useNavigate();
   const [promoCode, setPromoCode] = useState('');
   const order = calculateOrderTotal(cart, promoCode);
+  const isEmpty = cart.length === 0;
 
   const handleIncrement = (item: CartItem) => {
     dispatch(
@@ -51,30 +52,43 @@ export const Cart = () => {
   return (
     <div className="cart">
       <h2 className="cart__title heading-text">
-        Сумма корзины: {formatPrice(calculateCartSubtotal(cart))}
+        {isEmpty
+          ? 'Корзина пуста'
+          : `Сумма корзины: ${formatPrice(calculateCartSubtotal(cart))}`}
       </h2>
-      <div className="cart__list">
-        {cart.map((item: CartItem) => (
-          <CartItemRow
-            key={item.product.id}
-            item={item}
-            onIncrement={handleIncrement}
-            onDecrement={handleDecrement}
-            onRemove={handleRemove}
+
+      {!isEmpty && (
+        <>
+          <div className="cart__list">
+            {cart.map((item: CartItem) => (
+              <CartItemRow
+                key={item.product.id}
+                item={item}
+                onIncrement={handleIncrement}
+                onDecrement={handleDecrement}
+                onRemove={handleRemove}
+              />
+            ))}
+          </div>
+          <input
+            className="cart__promo body-text"
+            placeholder="Промокод"
+            value={promoCode}
+            onChange={(e) => setPromoCode(e.target.value)}
           />
-        ))}
-      </div>
-      <input
-        className="cart__promo body-text"
-        placeholder="Промокод"
-        value={promoCode}
-        onChange={(e) => setPromoCode(e.target.value)}
-      />
+        </>
+      )}
+
       <div className="cart__total">
-        <p className="body-text">Скидка: −{formatPrice(order.discount)}</p>
-        <p className="body-text">Доставка: {formatPrice(order.delivery)}</p>
+        {!isEmpty && (
+          <>
+            <p className="body-text">Скидка: −{formatPrice(order.discount)}</p>
+            <p className="body-text">Доставка: {formatPrice(order.delivery)}</p>
+          </>
+        )}
         <p className="total-text">Итого: {formatPrice(order.total)}</p>
       </div>
+
       <div className="cart__actions">
         <button
           className="cart__button cart__button--continue action-text"
@@ -82,13 +96,15 @@ export const Cart = () => {
         >
           Продолжить покупки
         </button>
-        <button
-          className="cart__button cart__button--checkout action-text"
-          disabled
-          title="Скоро будет доступно"
-        >
-          Оформить заказ
-        </button>
+        {!isEmpty && (
+          <button
+            className="cart__button cart__button--checkout action-text"
+            disabled
+            title="Скоро будет доступно"
+          >
+            Оформить заказ
+          </button>
+        )}
       </div>
     </div>
   );
