@@ -37,7 +37,7 @@ export function Header() {
         </div>
         {isSearchVisible(pathname) && (
           <div className="header__search-bar">
-            <SearchBar />
+            <SearchBar onSearch={() => {}} />
           </div>
         )}
         <div className={`header__nav${isOpen ? ' on' : ''}`}>
