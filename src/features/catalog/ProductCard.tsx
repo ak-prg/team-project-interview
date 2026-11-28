@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem } from '../cart/cartSlice';
-import { formatPrice, isInCart } from '../cart/cart-utils';
+import { formatPrice } from '../cart/cart-utils';
 import type { Product } from '../../types/catalog.types';
 import type { RootState } from '../../store';
 import './ProductCard.css';
@@ -13,8 +13,13 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
-  const inCart = isInCart(cartItems, product.id);
+  const cartItem = cartItems.find((item) => item.product.id === product.id);
+  const quantityInCart = cartItem ? cartItem.quantity : 0;
+
   const isOutOfStock = product.stock === 0;
+  const isMaxStockReached = quantityInCart >= product.stock;
+
+  const isButtonDisabled = isOutOfStock || isMaxStockReached;
 
   const handleAddToCart = () => {
     dispatch(addItem(product));
@@ -29,6 +34,15 @@ export const ProductCard = ({ product }: ProductCardProps) => {
     { label: 'Категория:', value: product.category },
     { label: 'Количество:', value: product.stock },
   ];
+
+  let buttonText = 'В корзину';
+  if (isOutOfStock) {
+    buttonText = 'Нет в наличии';
+  } else if (isMaxStockReached) {
+    buttonText = `В корзине ${product.stock} шт.`;
+  } else if (quantityInCart > 0) {
+    buttonText = `В корзине ${quantityInCart} шт.`;
+  }
 
   return (
     <article className="product-card">
@@ -67,9 +81,9 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         <button
           className="product-card__button action-text"
           onClick={handleAddToCart}
-          disabled={isOutOfStock}
+          disabled={isButtonDisabled}
         >
-          {isOutOfStock ? 'Нет в наличии' : inCart ? 'В корзине' : 'В корзину'}
+          {buttonText}
         </button>
       </div>
     </article>
