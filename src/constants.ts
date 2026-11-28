@@ -35,3 +35,19 @@ export const TEAM = [
       ' anim id est laborum.',
   },
 ];
+
+export const CATEGORIES = [
+  'Ходовая',
+  'Тормозная система',
+  'Система питания',
+  'Впускная система',
+  'Выпускная система',
+  'Двигатель',
+  'Трансмиссия и КПП',
+  'Фильтры',
+  'Кузовные детали',
+  'Система охлаждения',
+  'Система ГРМ',
+] as const;
+
+export type Category = (typeof CATEGORIES)[number];

@@ -1,37 +1,42 @@
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { addItem } from '../cart/cartSlice';
-import { ROUTES } from '../../routes';
+import { useState } from 'react';
+import { ProductCard } from './ProductCard';
+import { Pagination } from '../../components/pagination/Pagination';
 import type { Product } from '../../types/catalog.types';
 import parts from './parts.json';
+import './ProductList.css';
 
-const products: Product[] = parts;
+const products = parts as Product[];
+const ITEMS_PER_PAGE = 10;
 
 export const ProductList = () => {
-  const dispatch = useDispatch();
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const handleAdd = (product: Product) => {
-    dispatch(addItem(product));
-  };
+  const totalPages = Math.ceil(products.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
 
-  // Buttons for testing the cart - delete after catalog implementation
-  const firstProduct = products[1];
-  const navigate = useNavigate();
-  const handleGoToCart = () => {
-    navigate(ROUTES.CART);
+  const currentProducts = products.slice(startIndex, endIndex);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <>
-      <button
-        type="button"
-        onClick={() => firstProduct && handleAdd(firstProduct)}
-      >
-        Add to cart
-      </button>
-      <button type="button" onClick={handleGoToCart}>
-        Go to cart
-      </button>
-    </>
+    <div className="product-list">
+      <h2 className="product-list__title heading-text">ЗАПЧАСТИ</h2>
+
+      <div className="product-list__items">
+        {currentProducts.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />
+    </div>
   );
 };

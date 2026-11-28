@@ -1,0 +1,30 @@
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  background-color: var(--bg-page);
+}
+
+.product-list__title {
+  color: var(--text-muted);
+  font-size: var(--font-size-heading);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.product-list__items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 799px) {
+  .product-list {
+    padding: 24px 16px 24px;
+  }
+}
